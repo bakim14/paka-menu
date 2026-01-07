@@ -4,322 +4,274 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PAKA Restaurant Menu</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <style>
-:root{
-  --primary:#c0392b;
-  --dark:#222;
-  --light:#f7f7f7;
+/* Reset & Body */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:var(--light);
-  color:var(--dark);
+/* Header with Logo */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, grey, #ff8e53);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+header img {
+  height: 80px;
+  margin-right: 1rem;
+  border-radius: 15px;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+header p {
+  margin: 0.3rem 0 0 0;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-  url("/images/menu.jpg");
-  background-size:cover;
-  background-position:center;
-  color:white;
-  text-align:center;
-  padding:2.5rem 1rem;
-  z-index:10;
+/* Section cards */
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2rem;
+  margin: 1rem auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-header h1{
-  margin:0;
-  font-size:2rem;
-  letter-spacing:2px;
+/* Section title with icon */
+.section h2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.section h2 i {
+  margin-right: 0.7rem;
 }
 
-header p{
-  margin:.4rem 0 0;
-  font-size:.95rem;
+/* Menu items list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1 1 60%;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed #ddd;
+}
+.item-name { font-weight: 600; }
+.price { font-weight: 500; }
+
+/* Section image styling */
+.section img {
+  flex: 1 1 35%;
+  max-width: 320px;
+  border-radius: 20px;
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.1) saturate(1.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, filter 0.3s;
+  margin-left: 1rem;
+}
+.section img:hover {
+  transform: scale(1.03);
+  filter: brightness(1) contrast(1.1) saturate(1.3);
 }
 
-/* SECTION */
-.section{
-  margin:1.2rem;
-  background:white;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
+/* Responsive: mobile first */
+@media (max-width: 900px) {
+  .section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .section img {
+    width: 80%;
+    margin: 1rem 0 0 0;
+  }
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .price {
+    margin-top: 0.3rem;
+  }
 }
 
-.section img{
-  width:100%;
-  height:150px;
-  object-fit:cover;
-}
-
-.section-content{
-  padding:1.2rem;
-}
-
-.section h2{
-  margin:0 0 .8rem;
-  color:var(--primary);
-  font-size:1.2rem;
-}
-
-/* ITEMS */
-ul{list-style:none;padding:0;margin:0}
-
-li{
-  display:flex;
-  justify-content:space-between;
-  padding:.55rem 0;
-  border-bottom:1px dashed #ddd;
-  font-size:.95rem;
-}
-
-li:last-child{border-bottom:none}
-
-.price{
-  font-weight:600;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:1.5rem;
-  font-size:.8rem;
-  color:#666;
-}
+/* Section colors */
+.hot-beverages h2 { color: #e53935; }
+.snacks h2 { color: #43a047; }
+.egg-corner h2 { color: #fbc02d; }
+.chicken h2 { color: #d32f2f; }
+.goat h2 { color: #6d4c41; }
+.beef h2 { color: #8e24aa; }
+.fish h2 { color: #1976d2; }
+.soft-drinks h2 { color: #00897b; }
+.hard-drinks h2 { color: #6a1b9a; }
 </style>
 </head>
-
 <body>
 
-
 <header>
-  <h1>PAKA Restaurant</h1>
-  <p>Scan • Order • Enjoy</p>
+  <img src="/images/paka logo.jpg" alt="PAKA Logo">
+  <div>
+    <h1>PAKA Restaurant</h1>
+    <p>Scan • Order • Enjoy!</p>
+  </div>
 </header>
 
-<!-- HOT BEVERAGES -->
-<div class="section">
-<img src="/images/hot beverages.jpg">
-<div class="section-content">
-<h2>☕ Hot Beverages</h2>
-<ul>
-<li>African Tea <span class="price">6,000 UGX</span></li>
-<li>African Coffee <span class="price">6,000 UGX</span></li>
-<li>English Tea <span class="price">8,000 UGX</span></li>
-<li>Black Tea <span class="price">4,000 UGX</span></li>
-<li>Black Coffee <span class="price">6,000 UGX</span></li>
-<li>Dawa Tea <span class="price">7,000 UGX</span></li>
-<li>Lemon Tea <span class="price">5,000 UGX</span></li>
-<li>Hot Water <span class="price">2,000 UGX</span></li>
-</ul>
-</div>
+<!-- Hot Beverages -->
+<div class="section hot-beverages">
+  <h2><i class="fas fa-mug-hot"></i>Hot Beverages</h2>
+  <ul>
+    <li><span class="item-name">African Tea</span> <span class="price">6,000 UGX</span></li>
+    <li><span class="item-name">African Coffee</span> <span class="price">6,000 UGX</span></li>
+    <li><span class="item-name">English Tea</span> <span class="price">8,000 UGX</span></li>
+    <li><span class="item-name">Black Tea</span> <span class="price">4,000 UGX</span></li>
+    <li><span class="item-name">Black Coffee</span> <span class="price">6,000 UGX</span></li>
+    <li><span class="item-name">Dawa Tea</span> <span class="price">7,000 UGX</span></li>
+    <li><span class="item-name">Lemon Tea</span> <span class="price">5,000 UGX</span></li>
+    <li><span class="item-name">Hot H₂O</span> <span class="price">2,000 UGX</span></li>
+  </ul>
+  <img src="/images/hot beverages.jpg" alt="Hot Beverages">
 </div>
 
-<!-- SNACKS -->
-<div class="section">
-<img src="/images/snacks.jpg">
-<div class="section-content">
-<h2>🥪 Snacks Corner</h2>
-<ul>
-<li>Chapati <span class="price">2,000 UGX</span></li>
-<li>Chap <span class="price">4,000 UGX</span></li>
-<li>Mandazi <span class="price">1,000 UGX</span></li>
-<li>Kebab <span class="price">2,000 UGX</span></li>
-<li>Samosa <span class="price">3,000 UGX</span></li>
-<li>Egg Roll <span class="price">3,000 UGX</span></li>
-<li>Boiled Eggs <span class="price">2,000 UGX</span></li>
-<li>Gonja <span class="price">3,000 UGX</span></li>
-<li>Katogo Plain <span class="price">6,000 UGX</span></li>
-<li>Katogo Beef <span class="price">12,000 UGX</span></li>
-</ul>
-</div>
+<!-- Snacks Corner -->
+<div class="section snacks">
+  <h2><i class="fas fa-bread-slice"></i>Snacks Corner</h2>
+  <ul>
+    <li><span class="item-name">Chapati</span> <span class="price">2,000 UGX</span></li>
+    <li><span class="item-name">Chap</span> <span class="price">4,000 UGX</span></li>
+    <li><span class="item-name">Mandazi</span> <span class="price">1,000 UGX</span></li>
+    <li><span class="item-name">Kebab</span> <span class="price">2,000 UGX</span></li>
+    <li><span class="item-name">Samosa</span> <span class="price">3,000 UGX</span></li>
+    <li><span class="item-name">Egg roll</span> <span class="price">3,000 UGX</span></li>
+    <li><span class="item-name">Boiled Eggs</span> <span class="price">2,000 UGX</span></li>
+    <li><span class="item-name">Gonja</span> <span class="price">3,000 UGX</span></li>
+    <li><span class="item-name">Katogo Plain</span> <span class="price">6,000 UGX</span></li>
+    <li><span class="item-name">Katogo Beef</span> <span class="price">12,000 UGX</span></li>
+  </ul>
+  <img src="/images/snacks.jpg" alt="Snacks">
 </div>
 
-<!-- EGG CORNER -->
-<div class="section">
-<img src="/images/egg corner.jpg">
-<div class="section-content">
-<h2>🍳 Egg Corner</h2>
-<ul>
-<li>Boiled Egg <span class="price">2,000 UGX</span></li>
-<li>Rolex <span class="price">4,000 UGX</span></li>
-<li>Spanish Omelette <span class="price">4,000 UGX</span></li>
-<li>Plain Omelette <span class="price">3,000 UGX</span></li>
-<li>Mashed Egg <span class="price">2,000 UGX</span></li>
-</ul>
-</div>
+<!-- Egg Corner -->
+<div class="section egg-corner">
+  <h2><i class="fas fa-egg"></i>Egg Corner</h2>
+  <ul>
+    <li><span class="item-name">Boiled egg</span> <span class="price">2,000 UGX</span></li>
+    <li><span class="item-name">Rolex</span> <span class="price">4,000 UGX</span></li>
+    <li><span class="item-name">Spanish Omelette</span> <span class="price">4,000 UGX</span></li>
+    <li><span class="item-name">Plain Omelette</span> <span class="price">3,000 UGX</span></li>
+    <li><span class="item-name">Mashed egg</span> <span class="price">2,000 UGX</span></li>
+  </ul>
+  <img src="/images/egg corner.jpg" alt="Eggs">
 </div>
 
-<!-- SERVED WITH -->
-<div class="section">
-<img src="/images/served with.jpg">
-<div class="section-content">
-<h2>🍽️ Served With</h2>
-<ul>
-<li>Chips Plain <span class="price">7,000 UGX</span></li>
-<li>Potato Wedges <span class="price">8,000 UGX</span></li>
-<li>Boiled Irish <span class="price">7,000 UGX</span></li>
-<li>Mashed Potatoes <span class="price">8,000 UGX</span></li>
-<li>Rice <span class="price">5,000 UGX</span></li>
-<li>Pilau <span class="price">8,000 UGX</span></li>
-<li>Posho <span class="price">5,000 UGX</span></li>
-<li>Kachumbali <span class="price">2,000 UGX</span></li>
-<li>Gravy <span class="price">2,000 UGX</span></li>
-<li>Garden Salad <span class="price">2,000 UGX</span></li>
-<li>Fruit Salad <span class="price">3,000 UGX</span></li>
-</ul>
-</div>
+<!-- Chicken Corner -->
+<div class="section chicken">
+  <h2><i class="fas fa-drumstick-bite"></i>Chicken Corner</h2>
+  <ul>
+    <li><span class="item-name">Chicken pilao pan</span> <span class="price">17,000 UGX</span></li>
+    <li><span class="item-name">Chips Chicken</span> <span class="price">17,000 UGX</span></li>
+    <li><span class="item-name">Boiled Chicken</span> <span class="price">10,000 UGX</span></li>
+    <li><span class="item-name">BBQ Chicken</span> <span class="price">12,000 UGX</span></li>
+    <li><span class="item-name">Gravy Chicken</span> <span class="price">12,000 UGX</span></li>
+    <li><span class="item-name">Posho pan fried chicken</span> <span class="price">15,000 UGX</span></li>
+  </ul>
+  <img src="/images/chicken corner.avif" alt="Chicken">
 </div>
 
-<!-- LIVER -->
-<div class="section">
-<img src="/images/liver corner.jpg">
-<div class="section-content">
-<h2>🥩 Liver Corner</h2>
-<ul>
-<li>Chaps Liver <span class="price">18,000 UGX</span></li>
-<li>Liver Pilau <span class="price">17,000 UGX</span></li>
-</ul>
-</div>
-</div>
-
-<!-- CHICKEN -->
-<div class="section">
-<img src="/images/chicken corner.avif">
-<div class="section-content">
-<h2>🍗 Chicken Corner</h2>
-<ul>
-<li>Chicken Pilau Pan <span class="price">17,000 UGX</span></li>
-<li>Chips Chicken <span class="price">17,000 UGX</span></li>
-<li>Boiled Chicken <span class="price">10,000 UGX</span></li>
-<li>BBQ Chicken <span class="price">12,000 UGX</span></li>
-<li>Gravy Chicken <span class="price">12,000 UGX</span></li>
-<li>Posho Pan Fried Chicken <span class="price">15,000 UGX</span></li>
-</ul>
-</div>
+<!-- Goat Corner -->
+<div class="section goat">
+  <h2><i class="fas fa-bacon"></i>Goat Corner</h2>
+  <ul>
+    <li><span class="item-name">Goat BBQ</span> <span class="price">5,000 UGX</span></li>
+    <li><span class="item-name">Goat plain pan</span> <span class="price">3,000 UGX</span></li>
+    <li><span class="item-name">Goat Boiled</span> <span class="price">4,000 UGX</span></li>
+    <li><span class="item-name">Goat gravy</span> <span class="price">10,000 UGX</span></li>
+    <li><span class="item-name">Chaps Goat</span> <span class="price">10,000 UGX</span></li>
+    <li><span class="item-name">Posho pan fried goat</span> <span class="price">15,000 UGX</span></li>
+  </ul>
+  <img src="/images/goat corner.jpg" alt="Goat">
 </div>
 
-<!-- GOAT -->
-<div class="section">
-<img src="/images/goat corner.jpg">
-<div class="section-content">
-<h2>🐐 Goat Corner</h2>
-<ul>
-<li>Goat BBQ <span class="price">5,000 UGX</span></li>
-<li>Goat Plain Pan <span class="price">3,000 UGX</span></li>
-<li>Goat Boiled <span class="price">4,000 UGX</span></li>
-<li>Goat Gravy <span class="price">10,000 UGX</span></li>
-<li>Chaps Goat <span class="price">10,000 UGX</span></li>
-<li>Posho Pan Fried Goat <span class="price">15,000 UGX</span></li>
-</ul>
-</div>
+<!-- Beef Corner -->
+<div class="section beef">
+  <h2><i class="fas fa-cow"></i>Beef Corner</h2>
+  <ul>
+    <li><span class="item-name">Chips Beef</span> <span class="price">15,000 UGX</span></li>
+    <li><span class="item-name">Beef plain</span> <span class="price">8,000 UGX</span></li>
+    <li><span class="item-name">Beef boiled</span> <span class="price">8,000 UGX</span></li>
+    <li><span class="item-name">Beef gravy</span> <span class="price">9,000 UGX</span></li>
+  </ul>
+  <img src="/images/beef1.jpeg" alt="Beef">
 </div>
 
-<!-- BEEF -->
-<div class="section">
-<img src="/images/beef corner.jpg">
-<div class="section-content">
-<h2>🥩 Beef Corner</h2>
-<ul>
-<li>Chips Beef <span class="price">15,000 UGX</span></li>
-<li>Beef Plain <span class="price">8,000 UGX</span></li>
-<li>Beef Boiled <span class="price">8,000 UGX</span></li>
-<li>Beef Gravy <span class="price">9,000 UGX</span></li>
-</ul>
-</div>
-</div>
-
-<!-- FISH -->
-<div class="section">
-<img src="/images/fish corner.jpg">
-<div class="section-content">
-<h2>🐟 Fish Corner</h2>
-<ul>
-<li>Whole Fish <span class="price">25,000 UGX</span></li>
-<li>Whole Fish + Chips <span class="price">30,000 UGX</span></li>
-<li>Whole Fish + Wedges <span class="price">30,000 UGX</span></li>
-<li>Fish Fillet Plain <span class="price">15,000 UGX</span></li>
-<li>Fish Fillet + Chips <span class="price">20,000 UGX</span></li>
-<li>Fish Piece + Chips <span class="price">15,000 UGX</span></li>
-<li>Posho Pan Fried Fish <span class="price">30,000 UGX</span></li>
-</ul>
-</div>
+<!-- Fish Corner -->
+<div class="section fish">
+  <h2><i class="fas fa-fish"></i>Fish Corner</h2>
+  <ul>
+    <li><span class="item-name">Whole Fish</span> <span class="price">25,000 UGX</span></li>
+    <li><span class="item-name">Whole fish + chips</span> <span class="price">30,000 UGX</span></li>
+    <li><span class="item-name">Whole fish + wages</span> <span class="price">30,000 UGX</span></li>
+    <li><span class="item-name">Fish fillet plain</span> <span class="price">15,000 UGX</span></li>
+    <li><span class="item-name">Fish fillet + chips</span> <span class="price">20,000 UGX</span></li>
+    <li><span class="item-name">Fish Piece + chips</span> <span class="price">15,000 UGX</span></li>
+    <li><span class="item-name">Posho pan fried fish</span> <span class="price">30,000 UGX</span></li>
+  </ul>
+  <img src="/images/fish1.jpeg" alt="Fish">
 </div>
 
-<!-- SOFT DRINKS -->
-<div class="section">
-<img src="/images/soft drinks.avif">
-<div class="section-content">
-<h2>🥤 Soft Drinks</h2>
-<ul>
-<li>Juice <span class="price">5,000 UGX</span></li>
-<li>Cocktail <span class="price">5,000 UGX</span></li>
-<li>Milk <span class="price">4,000 UGX</span></li>
-<li>Soda <span class="price">2,000 UGX</span></li>
-<li>Water <span class="price">2,000 UGX</span></li>
-</ul>
-</div>
+<!-- Soft Drinks -->
+<div class="section soft-drinks">
+  <h2><i class="fas fa-wine-glass-alt"></i>Soft Drinks</h2>
+  <ul>
+    <li><span class="item-name">Juice plain</span> <span class="price">5,000 UGX</span></li>
+    <li><span class="item-name">Cocktail</span> <span class="price">5,000 UGX</span></li>
+    <li><span class="item-name">Glass of milk</span> <span class="price">4,000 UGX</span></li>
+    <li><span class="item-name">Soda</span> <span class="price">2,000 UGX</span></li>
+    <li><span class="item-name">Water</span> <span class="price">2,000 UGX</span></li>
+  </ul>
+  <img src="/images/soft drinks.avif" alt="Soft Drinks">
 </div>
 
-<!-- HARD DRINKS -->
-<div class="section">
-<img src="/images/hard drinks.jpg">
-<div class="section-content">
-<h2>🍺 Hard Drinks</h2>
-<ul>
-<li>Beer <span class="price">5,000 UGX</span></li>
-<li>Rock Boom <span class="price">3,000 UGX</span></li>
-<li>Coffee Malt <span class="price">4,000 UGX</span></li>
-<li>Red Bull <span class="price">10,000 UGX</span></li>
-<li>Power Horse <span class="price">10,000 UGX</span></li>
-</ul>
+<!-- Hard Drinks -->
+<div class="section hard-drinks">
+  <h2><i class="fas fa-glass-cheers"></i>Hard Drinks</h2>
+  <ul>
+    <li><span class="item-name">Beers</span> <span class="price">5,000 UGX</span></li>
+    <li><span class="item-name">Rock Boom</span> <span class="price">3,000 UGX</span></li>
+    <li><span class="item-name">Coffee Malt</span> <span class="price">4,000 UGX</span></li>
+    <li><span class="item-name">Red Bull</span> <span class="price">10,000 UGX</span></li>
+    <li><span class="item-name">Power Horse</span> <span class="price">10,000 UGX</span></li>
+    <li><span class="item-name">Bond 7 1/2</span> <span class="price">30,000 UGX</span></li>
+    <li><span class="item-name">Black Label 1/2</span> <span class="price">95,000 UGX</span></li>
+    <li><span class="item-name">Wine Glass</span> <span class="price">10,000 UGX</span></li>
+  </ul>
+  <img src="/images/hard drinks.jpg" alt="Hard Drinks">
 </div>
-</div>
-
-<!-- SPIRITS & WINES -->
-<div class="section">
-<img src="/images/wines and spirits.avif">
-<div class="section-content">
-<h2>🥃 Spirits & Wines</h2>
-<ul>
-<li>UG Big Bottle <span class="price">55,000 UGX</span></li>
-<li>UG 1/4 Glass <span class="price">15,000 UGX</span></li>
-<li>UG Plastic Bottle <span class="price">8,000 UGX</span></li>
-<li>Jameson 1L <span class="price">200,000 UGX</span></li>
-<li>Jameson 750ml <span class="price">180,000 UGX</span></li>
-<li>Jameson 350ml <span class="price">65,000 UGX</span></li>
-<li>Wine Big Bottle <span class="price">55,000 UGX</span></li>
-<li>Wine Glass <span class="price">10,000 UGX</span></li>
-</ul>
-</div>
-</div>
-
-<footer>
-© PAKA Restaurant • Digital Menu
-</footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
